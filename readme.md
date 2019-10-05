@@ -9,4 +9,4 @@
 - Fokus Kategorie
 - Gewicht
 
-In Excel Datei speichern (jedes Update neue Spalte)
+Online Speichern
