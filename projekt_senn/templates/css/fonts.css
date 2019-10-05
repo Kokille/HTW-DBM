@@ -1,0 +1,71 @@
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+	font-family: Arial;
+    font-weight: normal;
+}
+
+h1 {
+    color: Black;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 6px solid Black;
+}
+
+h2 {
+    color: white;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    color: Black;
+	text-transform: uppercase;
+	font-weight: bold;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	text-align: center;
+}
+
+h4 {
+    color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+    font-size: 30px;
+	top: 5px;
+}
+
+h5 {
+    font-size: 100px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+	margin-top: 100px;
+	text-align: center;
+}
+
+/*MAIN TITEL----------------------*/
+h6 {
+    font: 120px/1em Arial;
+	font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.titel {
+	margin-top: 100px;
+}
+
+.p {
+	color: black;
+	font-family: Arial;
+    font-weight: normal;
+}
