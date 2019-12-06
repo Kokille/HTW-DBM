@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 @app.route("/")
-#@app.route("/index")
+@app.route("/index")
 def index():
     """Summary
 
@@ -19,6 +19,41 @@ def index():
         function: Description
     """
     return render_template("index.html")
+
+"""------------------------------------------------------------------------------------------------------------"""
+
+@app.route("/coaches")
+def coaches():
+    """Summary
+
+    Returns:
+        function: Description
+    """
+    return render_template("coaches.html")
+
+"""------------------------------------------------------------------------------------------------------------"""
+
+@app.route("/athleten")
+def athleten():
+    """Summary
+
+    Returns:
+        function: Description
+    """
+    return render_template("athleten.html")
+
+"""------------------------------------------------------------------------------------------------------------"""
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
