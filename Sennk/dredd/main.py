@@ -33,27 +33,27 @@ def coaches():
 
 """------------------------------------------------------------------------------------------------------------"""
 
-@app.route("/athleten")
-def athleten():
+@app.route("/athletes")
+def athletes():
     """Summary
 
     Returns:
         function: Description
     """
-    return render_template("athleten.html")
+    return render_template("athletes.html")
 
 """------------------------------------------------------------------------------------------------------------"""
 
+@app.route("/team")
+def team():
+    """Summary
 
+    Returns:
+        function: Description
+    """
+    return render_template("team.html")
 
-
-
-
-
-
-
-
-
+"""------------------------------------------------------------------------------------------------------------"""
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
