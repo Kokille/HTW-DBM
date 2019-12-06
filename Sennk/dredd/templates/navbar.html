@@ -8,9 +8,8 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
-                <li class="nav-item active"><a class="nav-link">Coaches</a></li>
-                <li class="nav-item active"><a class="nav-link">Athleten</a></li>
-                <li class="nav-item active"><a class="nav-link">Team</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{{ url_for('coaches') }}">Coaches</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{{ url_for('athleten') }}">Athleten</a></li>
              </ul>
              <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
