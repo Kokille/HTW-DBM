@@ -5,7 +5,29 @@
     <main>
         <div>
             <br>
-            <h1>Overview Tool - National Karate Team FL</h1>
+            <h1>Datenerfassung - Karate National Team FL</h1>
+            <br>
+
+            <div class="BOXweb">
+                <h2>Athleten</h2>
+                    <p class="textweb">
+                    </br>
+                    <form class="form-inline"></form>
+                        <a href="{{ url_for('athletes') }}" class="btn btn-primary" role="button">Athleten erfassen</a>
+                    </form>
+                    </p>
+            </div>
+
+            <div class="BOXweb">
+                <h2>Coaches</h2>
+                    <p class="textweb">
+                    </br>
+                    <form class="form-inline"></form>
+                        <a href="{{ url_for('coaches') }}" class="btn btn-primary" role="button">Coaches erfassen</a>
+                    </form>
+                    </p>
+            </div>
+
         </div>
     </main>
 </body>
