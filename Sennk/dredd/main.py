@@ -7,8 +7,14 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
-app = Flask(__name__)
+#Datastuff editing import
+from libs import athletes
+from libs import coaches
+from libs import team
 
+app = Flask("Team")
+
+"""------------------------------------------------------------------------------------------------------------"""
 
 #Landingpage
 @app.route("/")
