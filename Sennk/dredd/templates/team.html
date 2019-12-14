@@ -7,7 +7,6 @@
             <br>
             <h1>National Karate Team FL</h1>
 
-
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12 mb-3">
@@ -25,26 +24,20 @@
                 </thead>
 
                 {% if dict_coach %}
-                {% for key, value in dict_coach.items() %}
+                    {% for key, value in dict_coach.items() %}
 
                 <tbody>
                     <tr>
-                        <td>{{ value['schluessel'] }}</td>
-                        <td id ="name">{{ value['wert']}}</td>
-                        <td id ="wert">{{ value['wert']}}</td>
-                        <td id ="menge">{{ value['menge']}}</td>
+                        <td>{{ value['name'] }}</td>
+                        <td id ="name">{{ value['name']}}</td>
+                        <td id ="vorname">{{ value['vorname']}}</td>
+                        <td id ="jahrgang">{{ value['jahrgang']}}</td>
                     </tr>
                 </tbody>  
             </table>
 
-
-
-
-
-
-
-
-
+            </div>
+            </div>
 
         </div>
     </main>
