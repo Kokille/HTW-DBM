@@ -27,10 +27,6 @@ def index():
 #Add Coaches
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
-    if (request.method == "POST"):
-        coaches.safe_entry_form(request.form)
-        return redirect("/team")
-
     return render_template("coaches.html")
 
 """------------------------------------------------------------------------------------------------------------"""
@@ -45,7 +41,6 @@ def athletes():
 #Show Team
 @app.route("/team")
 def team():
-#    projektdaten = coaches.datenbank_lesen()
     return render_template("team.html")
 
 """------------------------------------------------------------------------------------------------------------"""
