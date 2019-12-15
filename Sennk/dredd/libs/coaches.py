@@ -5,7 +5,6 @@ import json
 
 
 
-
 """
 #Coachdaten - Name/Vorname/Jahrgang - erfassen
 def safe_entry_form(form_request):

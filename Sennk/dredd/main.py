@@ -27,6 +27,9 @@ def index():
 #Add Coaches
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
+    if request.method == "POST":
+        name = request.form["name"]
+        return render_template("team.html", name=name, vorname=vorname, jahrgang=jahrgang)
     return render_template("coaches.html")
 
 """------------------------------------------------------------------------------------------------------------"""
