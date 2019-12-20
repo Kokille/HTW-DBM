@@ -4,60 +4,85 @@
 <body>
     <main>
         <div>
-            <br>
-            <h1>National Karate Team FL</h1>
+            <div class="container mt-5">
+                <div class="col-12 mb-3">
+    
+                    <br>
+                    <h1>National Karate Team FL</h1>
+                    <br>
+                </div>
+            </div>
 
+<!--COACHES Üversicht--------------------------------------------------------------------------------------------------->
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12 mb-3">
                         <h1>Coaches</h1>
-                        <hr>
+                        <br>
                     </div>
-
-            <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Vorname</th>
-                        <th scope="col">Jahrgang</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>{{ name }}</td>
-                        <td>{{ vorname }}</td>
-                        <td>{{ jahrgang }}</td>
-                    </tr>
-                </tbody>
-            </table>
             
-            <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Unnötig</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Vorname</th>
-                        <th scope="col">Jahrgang</th>
-                    </tr>
-                </thead>
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Vorname</th>
+                                    <th scope="col">Jahrgang</th>
+                                </tr>
+                            </thead>
 
-                {% if coaches %}
-                    {% for item in coaches %}
-                        
-                        <tbody>
-                            <tr>
-                                <td>{{ item['name'] }}</td>
-                                <td id ="name">{{ item['name']}}</td>
-                                <td id ="vorname">{{ item['vorname']}}</td>
-                                <td id ="jahrgang">{{ item['jahrgang']}}</td>
-                            </tr>
-                        </tbody>  
-                    {% endfor %}
-                {% endif %}
-            </table>
+                            {% if coaches %}
+                                {% for item in coaches %}
+
+                                    <tbody>
+                                        <tr>
+                                            <td id ="name">{{ item['name']}}</td>
+                                            <td id ="vorname">{{ item['vorname']}}</td>
+                                            <td id ="jahrgang">{{ item['jahrgang']}}</td>
+                                        </tr>
+                                    </tbody>  
+
+                                {% endfor %}
+                            {% endif %}
+                        </table>
+                </div>
             </div>
+            
+<!--ATHLETES Üversicht--------------------------------------------------------------------------------------------------->
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <h1>Athletes</h1>
+                        <br>
+                    </div>
+            
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Vorname</th>
+                                    <th scope="col">Disziplin</th>
+                                    <th scope="col">Kategorie</th>
+                                </tr>
+                            </thead>
+
+                            {% if athletes %}
+                                {% for item in athletes %}
+
+                                    <tbody>
+                                        <tr>
+                                            <td id ="name">{{ item['name']}}</td>
+                                            <td id ="vorname">{{ item['vorname']}}</td>
+                                            <td id ="disziplin">{{ item['disziplin']}}</td>
+                                            <td id ="kategorie">{{ item['kategorie']}}</td>
+                                        </tr>
+                                    </tbody>  
+
+                                {% endfor %}
+                            {% endif %}
+                        </table>
+                </div>
             </div>
+
 
         </div>
     </main>

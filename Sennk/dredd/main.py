@@ -9,7 +9,7 @@ from flask import url_for
 
 #Datastuff editing import
 from libs import athletes
-from libs import coaches
+from libs import coaches as coaches_lib
 from libs import team
 
 app = Flask("Team")
@@ -28,9 +28,8 @@ def index():
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
     if request.method == "POST":
-        coaches.safe_entry_form(request.form)
-        """name = request.form["name"]
-        return render_template("team.html", name=name, vorname=vorname, jahrgang=jahrgang)"""
+        coaches_lib.save(form.request)
+        return redirect("/team")
     return render_template("coaches.html")
 
 """------------------------------------------------------------------------------------------------------------"""
@@ -47,22 +46,25 @@ def athletes():
 def team():
     dict_coach = [
         {
-            "name": "Franz",
-            "vorname": "Franz",
-            "jahrgang": "900"
+            "name": "Senn",
+            "vorname": "Kilian",
+            "jahrgang": "1998"
         },
          {
-            "name": "Franz",
-            "vorname": "Franz",
-            "jahrgang": "900"
-        },
-         {
-            "name": "Franz",
-            "vorname": "Franz",
-            "jahrgang": "900"
+            "name": "Sprenger",
+            "vorname": "Aileen",
+            "jahrgang": "1995"
         }
     ]
-    return render_template("team.html", coaches=dict_coach )
+    dict_athlete = [
+        {
+            "name": "Senn",
+            "vorname": "Kilian",
+            "disziplin": "Kumite Male",
+            "kategorie": "U16, +58kg"
+        }
+    ]
+    return render_template("team.html", coaches=dict_coach, athletes=dict_athlete )
 
 """------------------------------------------------------------------------------------------------------------"""
 
