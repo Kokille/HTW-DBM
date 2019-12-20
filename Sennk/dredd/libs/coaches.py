@@ -2,10 +2,6 @@ import json
 
 
 
-
-
-
-"""
 #Coachdaten - Name/Vorname/Jahrgang - erfassen
 def safe_entry_form(form_request):
     print(form_request)
@@ -24,7 +20,7 @@ def safe_entry(name, vorname, jahrgang):
 def co_schreiben(daten):
     with open('co.txt', "w", encoding="utf-8") as open_file:
         json.dump(daten, open_file)
-"""
+
 
 
 

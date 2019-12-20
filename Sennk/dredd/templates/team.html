@@ -32,32 +32,30 @@
                 </tbody>
             </table>
             
-
-
-
-                        <!--
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
+                        <th scope="col">Unnötig</th>
                         <th scope="col">Name</th>
                         <th scope="col">Vorname</th>
                         <th scope="col">Jahrgang</th>
                     </tr>
                 </thead>
 
-                {% if dict_coach %}
-                    {% for key, value in dict_coach.items() %}
-
-                <tbody>
-                    <tr>
-                        <td>{{ value['name'] }}</td>
-                        <td id ="name">{{ value['name']}}</td>
-                        <td id ="vorname">{{ value['vorname']}}</td>
-                        <td id ="jahrgang">{{ value['jahrgang']}}</td>
-                    </tr>
-                </tbody>  
+                {% if coaches %}
+                    {% for item in coaches %}
+                        
+                        <tbody>
+                            <tr>
+                                <td>{{ item['name'] }}</td>
+                                <td id ="name">{{ item['name']}}</td>
+                                <td id ="vorname">{{ item['vorname']}}</td>
+                                <td id ="jahrgang">{{ item['jahrgang']}}</td>
+                            </tr>
+                        </tbody>  
+                    {% endfor %}
+                {% endif %}
             </table>
-                        -->
             </div>
             </div>
 

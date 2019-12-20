@@ -28,8 +28,9 @@ def index():
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
     if request.method == "POST":
-        name = request.form["name"]
-        return render_template("team.html", name=name, vorname=vorname, jahrgang=jahrgang)
+        coaches.safe_entry_form(request.form)
+        """name = request.form["name"]
+        return render_template("team.html", name=name, vorname=vorname, jahrgang=jahrgang)"""
     return render_template("coaches.html")
 
 """------------------------------------------------------------------------------------------------------------"""
@@ -44,7 +45,24 @@ def athletes():
 #Show Team
 @app.route("/team")
 def team():
-    return render_template("team.html")
+    dict_coach = [
+        {
+            "name": "Franz",
+            "vorname": "Franz",
+            "jahrgang": "900"
+        },
+         {
+            "name": "Franz",
+            "vorname": "Franz",
+            "jahrgang": "900"
+        },
+         {
+            "name": "Franz",
+            "vorname": "Franz",
+            "jahrgang": "900"
+        }
+    ]
+    return render_template("team.html", coaches=dict_coach )
 
 """------------------------------------------------------------------------------------------------------------"""
 
