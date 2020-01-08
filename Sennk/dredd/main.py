@@ -7,12 +7,18 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
-#Datastuff editing import
-from libs import athletes
+# Datastuff editing import
 from libs import coaches as coaches_lib
-from libs import team
+from libs.team import (
+    load_json,
+    save_json,
+)
 
 app = Flask("Team")
+
+# JSON files used as database.
+DATEI_ATHLETE = 'athlete.json'
+DATEI_COACH = 'coach.json'
 
 """------------------------------------------------------------------------------------------------------------"""
 
@@ -28,7 +34,7 @@ def index():
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
     if request.method == "POST":
-        coaches_lib.save(form.request)
+        save_json(DATEI_COACH, request.form)
         return redirect("/team")
     return render_template("coaches.html")
 
@@ -44,7 +50,10 @@ def athletes():
 #Show Team
 @app.route("/team")
 def team():
-    return render_template("team.html")
+    # Load JSON files
+    all_coaches = load_json(DATEI_COACH)
+
+    return render_template("team.html", coaches=all_coaches)
 
 """------------------------------------------------------------------------------------------------------------"""
 
