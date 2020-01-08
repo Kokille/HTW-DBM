@@ -44,27 +44,7 @@ def athletes():
 #Show Team
 @app.route("/team")
 def team():
-    dict_coach = [
-        {
-            "name": "Senn",
-            "vorname": "Kilian",
-            "jahrgang": "1998"
-        },
-         {
-            "name": "Sprenger",
-            "vorname": "Aileen",
-            "jahrgang": "1995"
-        }
-    ]
-    dict_athlete = [
-        {
-            "name": "Senn",
-            "vorname": "Kilian",
-            "disziplin": "Kumite Male",
-            "kategorie": "U16, +58kg"
-        }
-    ]
-    return render_template("team.html", coaches=dict_coach, athletes=dict_athlete )
+    return render_template("team.html")
 
 """------------------------------------------------------------------------------------------------------------"""
 
