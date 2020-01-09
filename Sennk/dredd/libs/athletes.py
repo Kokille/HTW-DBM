@@ -4,7 +4,7 @@ import math
 laufendes_jahr = datetime.today().year
 
 
-def jahrgang():
+def parse_jahrgang(jahrgang):
     alter = laufendes_jahr - int(jahrgang)
 
     if alter < 14:
@@ -18,8 +18,10 @@ def jahrgang():
     else:
         return 'Elite'
 
+"""------------------------------------------------------------------------------------------------------------"""
 
-def gewicht():
+# Help from a Coworker
+def parse_gewicht(gewicht):
     endnummer = int(gewicht[-1])
     gewicht = int(gewicht)
 
@@ -30,3 +32,17 @@ def gewicht():
         return f'-{gewicht}'
     else:
         return f'+{gewicht}'
+
+"""------------------------------------------------------------------------------------------------------------"""
+
+def parse_athlete(json):
+    # Iterate over each object
+    parsed_items = []
+    for obj in json:
+        obj['kategorie'] = ', '.join([
+            parse_jahrgang(obj['jahrgang']),
+            parse_gewicht(obj['gewicht']),
+        ])
+        parsed_items.append(obj)
+
+    return parsed_items

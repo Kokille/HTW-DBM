@@ -8,7 +8,7 @@ from flask import request
 from flask import url_for
 
 # Datastuff editing import
-from libs import coaches as coaches_lib
+from libs.athletes import parse_athlete
 from libs.team import (
     load_json,
     save_json,
@@ -40,20 +40,27 @@ def coaches():
 
 """------------------------------------------------------------------------------------------------------------"""
 
-#Add Athletes
-@app.route("/athletes")
+# Add Athletes
+@app.route("/athletes", methods=["GET", "POST"])
 def athletes():
+    if request.method == "POST":
+        save_json(DATEI_ATHLETE, request.form)
+        return redirect("/team")
     return render_template("athletes.html")
 
 """------------------------------------------------------------------------------------------------------------"""
 
-#Show Team
+# Show Team
 @app.route("/team")
 def team():
     # Load JSON files
     all_coaches = load_json(DATEI_COACH)
+    all_athletes = load_json(DATEI_ATHLETE)
 
-    return render_template("team.html", coaches=all_coaches)
+    # Parse athletes by age / weight
+    all_athletes = parse_athlete(all_athletes)
+
+    return render_template("team.html", coaches=all_coaches, athletes=all_athletes)
 
 """------------------------------------------------------------------------------------------------------------"""
 
