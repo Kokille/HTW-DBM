@@ -2,18 +2,40 @@
 {% include "navbar.html" %}
 
 <body>
-    <main>
 
-        <div class="container mt-5">
-            <div class="col-12 mb-3">
+<div class="container mt-5">
+    <div class="col-12 mb-3">
 
-                <h1>Daten Athletes</h1>
-                <br>
+        <h1>Daten Athletes</h1>
+        <br>
 
+        <form method="POST" action="/athletes">
+            <div class="form-group mt-3">
+                <label for="name">Wie ist dein Name?</label>
+                <input type="text" class="form-control" name="name" placeholder="Senn" required>
             </div>
-        </div>
+            <div class="form-group mt-3">
+                <label for="vorname">Wie ist dein Vorname?</label>
+                <input type="text" class="form-control" name="vorname" placeholder="Kilian" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="disziplin">Was ist dein Disziplin?</label>
+                <input type="text" class="form-control" name="disziplin" placeholder="Kumite Male" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="jahrgang">Was ist dein Jahrgang?</label>
+                <input type="number" class="form-control" name="jahrgang" placeholder="1998" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="gewicht">Was ist dein Gewicht?</label>
+                <input type="number" class="form-control" name="gewicht" placeholder="58" required>
+            </div>
+            <input class="btn btn-primary" type="submit" value="submit">
+        </form>
 
-    </main>
+    </div>
+</div>
+
 </body>
 
 {% include "footer.html" %}

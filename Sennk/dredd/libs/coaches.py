@@ -1,8 +1,6 @@
 import json
 
-# def coach_save(aktivitaet):
-#     save(DATEI)
-#     return zeitpunkt, aktivitaet
+
 
 
 """
