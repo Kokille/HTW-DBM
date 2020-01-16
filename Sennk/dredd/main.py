@@ -22,7 +22,7 @@ DATEI_COACH = 'coach.json'
 
 """------------------------------------------------------------------------------------------------------------"""
 
-#Landingpage
+# Landingpage - Display options to Add Athletes or Coaches
 @app.route("/")
 @app.route("/index")
 def index():
@@ -30,7 +30,7 @@ def index():
 
 """------------------------------------------------------------------------------------------------------------"""
 
-#Add Coaches
+# Add Coaches
 @app.route("/coaches", methods=["GET", "POST"])
 def coaches():
     if request.method == "POST":
@@ -53,11 +53,11 @@ def athletes():
 # Show Team
 @app.route("/team")
 def team():
-    # Load JSON files
+    # Load JSON files to display Coahces in Table on top and Coaches on bottom
     all_coaches = load_json(DATEI_COACH)
     all_athletes = load_json(DATEI_ATHLETE)
 
-    # Parse athletes by age / weight
+    # Parse athletes by age / weight - laod data and categorize it
     all_athletes = parse_athlete(all_athletes)
 
     return render_template("team.html", coaches=all_coaches, athletes=all_athletes)

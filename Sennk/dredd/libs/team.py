@@ -1,6 +1,6 @@
 import json
 
-
+# laod and open jason file - read data
 def load_json(file):
     with open(file) as f:
         obj = json.load(f)
@@ -8,6 +8,7 @@ def load_json(file):
 
 """------------------------------------------------------------------------------------------------------------"""
 
+# save data to json from form - take data form /coach or /athlete and save in json
 def save_json(file, form_request):
     try:
         with open(file) as f:
@@ -15,7 +16,7 @@ def save_json(file, form_request):
     except FileNotFoundError:
         datei_inhalt = ()
 
-    # Append new object to json list
+    # Append new object to json list with pressing submit button on /coahces or /athletes
     datei_inhalt.append(
         form_request
     )

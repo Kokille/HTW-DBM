@@ -3,7 +3,8 @@ import math
 
 laufendes_jahr = datetime.today().year
 
-
+# Define age categorie - take year of birth from /athletes page and subtract it from year it is
+# devide year in olympic categories
 def parse_jahrgang(jahrgang):
     alter = laufendes_jahr - int(jahrgang)
 
@@ -20,7 +21,8 @@ def parse_jahrgang(jahrgang):
 
 """------------------------------------------------------------------------------------------------------------"""
 
-# Help from a Coworker
+# Help from a Coworker to create weight classes
+# Input data from screen /athletes get pulled out of json and filtered in "classes"
 def parse_gewicht(gewicht):
     endnummer = int(gewicht[-1])
     gewicht = int(gewicht)
@@ -36,7 +38,7 @@ def parse_gewicht(gewicht):
 """------------------------------------------------------------------------------------------------------------"""
 
 def parse_athlete(json):
-    # Iterate over each object
+    # Combine Jahrgang und Gewicht (pull out of json) to one object to display in one colum -> kategorie
     parsed_items = []
     for obj in json:
         obj['kategorie'] = ', '.join([
